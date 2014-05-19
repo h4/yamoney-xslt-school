@@ -1,0 +1,29 @@
+{
+  "name": "yamoney-xslt-task",
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/karma/bin/karma start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/h4/yamoney-xslt-task.git"
+  },
+  "author": "Mikhail Baranov <mkhl@brnv.ru>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/h4/yamoney-xslt-task/issues"
+  },
+  "homepage": "https://github.com/h4/yamoney-xslt-task",
+  "devDependencies": {
+    "chai": "^1.9.1",
+    "karma": "^0.12.16",
+    "karma-chrome-launcher": "^0.1.3",
+    "karma-coverage": "^0.2.1",
+    "karma-firefox-launcher": "^0.1.3",
+    "karma-jasmine": "^0.1.5",
+    "karma-mocha": "^0.1.3",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "mocha": "^1.19.0"
+  }
+}
