@@ -5,6 +5,12 @@
 
     };
 
+    /**
+     * Returned object that represented querystring
+     *
+     * @param {String} qs
+     * @returns {{}}
+     */
     QueryParser.prototype.parse = function(qs) {
         qs = qs.indexOf('?') === 0 ? qs.slice(1) : qs;
         var params = qs.split("&");
@@ -24,6 +30,33 @@
 
             res[k] = v;
         }
+
+        return res;
+    };
+
+    /**
+     * Build querystring from object
+     *
+     * @param {String} [url]
+     * @param {Object} obj
+     */
+    QueryParser.prototype.buildQuery = function(url, obj) {
+        var res = '';
+        var tmpArr = [];
+
+        if (arguments.length > 1) {
+            res = url + '?';
+        } else {
+            obj = url;
+        }
+
+        for (var prop in obj) {
+            if (obj.hasOwnProperty(prop)) {
+                tmpArr.push(encodeURIComponent(prop) + '=' + encodeURIComponent(obj[prop]));
+            }
+        }
+
+        res += tmpArr.join('&');
 
         return res;
     };

@@ -71,4 +71,45 @@ describe('queryParser', function(){
             res.b.should.be.equal('');
         });
     });
+
+    describe('buildQuery', function() {
+        it('should be defined', function() {
+            queryParser.buildQuery.should.be.exist;
+        });
+
+        it('should be a function', function() {
+            queryParser.buildQuery.should.be.a('function');
+        });
+
+        it('should return string', function() {
+            var res = queryParser.buildQuery({});
+
+            res.should.be.a('string');
+        });
+
+        it('should return a query', function() {
+            var res = queryParser.buildQuery({a:'b', c: 'd'});
+
+            res.should.be.equal('a=b&c=d');
+        });
+
+
+        it('should return encoded query', function() {
+            var res = queryParser.buildQuery({автор: 'кот & пёс'});
+
+            res.should.be.equal('%D0%B0%D0%B2%D1%82%D0%BE%D1%80=%D0%BA%D0%BE%D1%82%20%26%20%D0%BF%D1%91%D1%81');
+        });
+
+        it('should return empty string for empty object', function() {
+            var res = queryParser.buildQuery({});
+
+            res.should.be.equal('');
+        });
+
+        it('should accept optional url', function() {
+            var res = queryParser.buildQuery('http://host.tld', {a: 'b', c: 'd'});
+
+            res.should.be.equal('http://host.tld?a=b&c=d');
+        });
+    });
 });
