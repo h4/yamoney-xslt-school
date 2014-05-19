@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>CSS task #3</title>
+    <style>
+        section {
+            width: 600px;
+            margin: 20px auto;
+        }
+
+        section::after {
+            content: "";
+            font-size: 0;
+            clear: both;
+            height: 0;
+            display: block;
+            overflow: hidden;
+        }
+
+        img {
+            float: left;
+        }
+
+        blockquote {
+            position: relative;
+            overflow: hidden;
+            padding: 0;
+        }
+
+        .quote__wrapper {
+            margin-left: 40px;
+            background: #0B97C4;
+            padding: 10px;
+        }
+
+        .quote__text {
+            position: relative;
+            padding: 10px;
+            background: #FFF;
+        }
+
+        .quote__arrow {
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            width: 20px;
+            height: 20px;
+            -webkit-transform: rotate(45deg);
+               -moz-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                    transform: rotate(45deg);
+            background: #FFF;
+            border: solid 10px #0B97C4;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <img src="http://img5-fotki.yandex.net/get/9064/183191394.1c/0_STATICe48cd_29d8062d_S" alt=""/>
+        <blockquote>
+            <div class="quote__wrapper">
+                <span class="quote__arrow"></span>
+                <div class="quote__text">
+                    Акцепт реорганизован. При наступлении согласия всех сторон Кодекс гарантирует умысел, даже с учетом
+                    публичного характера данных правоотношений. Акцепт авалирован. Перестрахование, при ближайшем рассмотрении,
+                    латентно страхует Кодекс, это применимо и к исключительным правам. Сервитут противоречиво экспортирует
+                    страховой полис, исключая принцип презумпции невиновности.
+                </div>
+            </div>
+        </blockquote>
+    </section>
+
+    <section>
+        <img src="http://img5-fotki.yandex.net/get/5211/34477096.7a/0_STATIC72c85_b8ad7b61_S" alt=""/>
+        <blockquote>
+            <div class="quote__wrapper">
+                <span class="quote__arrow"></span>
+                <div class="quote__text">
+                    Акцепт реорганизован. При наступлении согласия всех сторон Кодекс гарантирует умысел, даже с учетом
+                    публичного характера данных правоотношений. Акцепт авалирован. Перестрахование, при ближайшем рассмотрении,
+                    латентно страхует Кодекс, это применимо и к исключительным правам. Сервитут противоречиво экспортирует
+                    страховой полис, исключая принцип презумпции невиновности.
+                </div>
+            </div>
+        </blockquote>
+    </section>
+
+    <section>
+        <img src="http://img6-fotki.yandex.net/get/9263/10492628.cc/0_STATICb0bd6_6ad51468_S1" alt=""/>
+        <blockquote>
+            <div class="quote__wrapper">
+                <span class="quote__arrow"></span>
+                <div class="quote__text">
+                    Акцепт реорганизован. При наступлении согласия всех сторон Кодекс гарантирует умысел, даже с учетом
+                    публичного характера данных правоотношений. Акцепт авалирован. Перестрахование, при ближайшем рассмотрении,
+                    латентно страхует Кодекс, это применимо и к исключительным правам. Сервитут противоречиво экспортирует
+                    страховой полис, исключая принцип презумпции невиновности.
+                </div>
+            </div>
+        </blockquote>
+    </section>
+</body>
+</html>
