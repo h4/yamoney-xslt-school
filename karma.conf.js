@@ -19,6 +19,7 @@ module.exports = function(config) {
         pattern: 'node_modules/chai/chai.js',
         include: true
       },
+      'src/**/*.js',
       'test/**/*.js'
     ],
 
