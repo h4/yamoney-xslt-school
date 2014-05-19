@@ -61,5 +61,41 @@
         return res;
     };
 
+    /**
+     * Compare two set of params
+     *
+     * @param obj1
+     * @param obj2
+     * @returns {{changed: {}, added: {}, removed: {}}}
+     */
+    QueryParser.prototype.compare = function(obj1, obj2) {
+        var res = {
+            changed: {},
+            added: {},
+            removed: {}
+        };
+        var prop;
+
+        for (prop in obj1) {
+            if (obj1.hasOwnProperty(prop)) {
+                if (!(prop in obj2)) {
+                    res.removed[prop] = obj1[prop];
+                } else if (obj1[prop] !== obj2[prop]) {
+                    res.changed[prop] = [obj1[prop], obj2[prop]];
+                }
+            }
+        }
+
+        for (prop in obj2) {
+            if (obj2.hasOwnProperty(prop)) {
+                if (!(prop in obj1)) {
+                    res.added[prop] = obj2[prop];
+                }
+            }
+        }
+
+        return res;
+    };
+
     window.queryParser = new QueryParser();
 })(window, document, undefined);

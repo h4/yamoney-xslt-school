@@ -112,4 +112,47 @@ describe('queryParser', function(){
             res.should.be.equal('http://host.tld?a=b&c=d');
         });
     });
+
+    describe('compare', function() {
+        it('should be defined', function() {
+            queryParser.compare.should.exist;
+        });
+
+        it('should be a function', function() {
+            queryParser.compare.should.be.a('function');
+        });
+
+        it('should return an object with three properties', function() {
+            var res = queryParser.compare();
+
+            res.should.be.an('object');
+            res.should.include.keys('added', 'removed', 'changed');
+        });
+
+        it('should return added params', function() {
+            var res = queryParser.compare({a: 'b'}, {a: 'b', c: 'd'});
+
+            res.added.should.be.deep.equal({c: 'd'});
+        });
+
+        it('should return removed params', function() {
+            var res = queryParser.compare({a: 'b', c: 'd'}, {a: 'b'});
+
+            res.removed.should.be.deep.equal({c: 'd'});
+        });
+
+        it('should return changed params', function() {
+            var res = queryParser.compare({a: 'd', c: 'b'}, {a: 'b', c: 'd'});
+
+            res.changed.should.be.deep.equal({a: ['d', 'b'], c: ['b', 'd']});
+        });
+
+        it('should return object wiht empty results where nothing was changed', function() {
+            var res = queryParser.compare({a: 'b', c: 'd'}, {a: 'b', c: 'd'});
+
+            res.added.should.be.empty;
+            res.changed.should.be.empty;
+            res.removed.should.be.empty;
+        });
+    });
 });
