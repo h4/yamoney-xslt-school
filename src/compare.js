@@ -58,6 +58,9 @@
     function prepare(e) {
         var qs = queryParser.parse(window.location.search);
 
+        qs.before = qs.before || "";
+        qs.after = qs.after || "";
+
         beforeEditor.setValue(JSON.stringify(queryParser.parse(qs.before), null, 4));
         afterEditor.setValue(JSON.stringify(queryParser.parse(qs.after), null, 4));
 
