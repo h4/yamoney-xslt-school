@@ -18,7 +18,7 @@ module.exports = function(config) {
       'karma-phantomjs-launcher',
       'karma-chrome-launcher',
       'karma-firefox-launcher',
-      'mocha-lcov-reporter'
+      'karma-coveralls'
     ],
 
     // list of files / patterns to load in the browser
